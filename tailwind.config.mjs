@@ -41,6 +41,7 @@ export default {
 		extend: {
 			colors: {
 				'background-purple': '#160D3B',
+                'footer': '#0B071E',
 				'light-purple': '#DBDEFF',
 				'light-purple-button': '#EBEDFF',
 				'light-pink': '#FCEBF9',
