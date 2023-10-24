@@ -37,6 +37,7 @@ export default {
         },
 		fontFamily: {
             'roboto-slab': ['Roboto Slab', 'sans-serif'],
+            'creepster': ['creepster']
         },
 		extend: {
 			colors: {
