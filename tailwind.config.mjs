@@ -61,12 +61,17 @@ export default {
                     url('/img/video/bg-video-grass.svg'),
                     url('/img/video/bg-video-bricks.png')
                 `,
-                'video-character': `url('/img/video/character.png')`
+                'video-character': `url('/img/video/character.png')`,
+                'footer-grass': `
+                    url('/img/bg-footer-grass1.svg'),
+                    url('/img/bg-footer-grass2.svg')
+                `,
             },
             backgroundPosition: {
                 'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%',
                 'video': 'center center',
-                'video-section': 'top 0 left 32%, bottom 0 left 16%'
+                'video-section': 'top 0 left 32%, bottom 0 left 16%',
+                'footer-grass': 'top -4px left 49%, top -9px center',
             },
 		},
 	},
