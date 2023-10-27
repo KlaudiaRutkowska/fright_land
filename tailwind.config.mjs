@@ -42,12 +42,13 @@ export default {
 		extend: {
 			colors: {
 				'background-purple': '#160D3B',
-                'footer': '#0B071E',
+                'dark-purple': '#0B071E',
 				'light-purple': '#DBDEFF',
 				'light-purple-button': '#EBEDFF',
 				'light-pink': '#FCEBF9',
 				'svg-light-purple': '#BDC1FF',
-				'svg-light-pink': '#F9D5F4'
+				'svg-light-pink': '#F9D5F4',
+                'yellow': '#E4B02A'
 			},
             backgroundImage: {
                 'btn-host': `
@@ -55,9 +56,17 @@ export default {
                     url('/img/btn-host-br-grass.svg'),
                     linear-gradient(to bottom right, var(--tw-gradient-stops))
                 `,
+                'video': `url('/img/video/bg-video.png')`,
+                'video-section': `
+                    url('/img/video/bg-video-grass.svg'),
+                    url('/img/video/bg-video-bricks.png')
+                `,
+                'video-character': `url('/img/video/character.png')`
             },
             backgroundPosition: {
-                'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%'
+                'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%',
+                'video': 'center center',
+                'video-section': 'top 0 left 32%, bottom 0 left 16%'
             },
 		},
 	},
