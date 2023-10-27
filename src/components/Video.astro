@@ -1,0 +1,138 @@
+---
+import LogoHeader from "./LogoHeader.astro";
+---
+
+<section id="video" class="bg-video">
+    <div class="container py-28">
+        <div
+            class="max-w-[1231px] mx-auto p-8 flex gap-8 rounded-[56px] bg-dark-purple bg-video-section bg-no-repeat"
+        >
+            <div class="flex flex-col items-center text-center">
+                <img
+                    class="mt-10"
+                    src="../../public/img/small-logo.png"
+                    alt=""
+                />
+
+                <h2
+                    class="mt-10 mb-4 font-creepster text-[64px] leading-none tracking-[-1.28px]"
+                >
+                    death will come tomorrow
+                </h2>
+                <p class="mb-[72px]">
+                    Of course, if she manages to leave the volcano first. We
+                    have prepared a special labyrinth for her.
+                </p>
+
+                <div class="flex gap-3 text-base leading-5 tracking-[-0.32px]">
+                    <button
+                        class="flex items-center px-6 pt-[13px] pb-[17px] text-light-pink rounded-2xl bg-btn-host bg-no-repeat from-[#EC56C9] to-[#9F2A7E] shadow-[0px_5px_50px_0px_rgba(192,57,161,0.25),_-2px_-3px_0px_0px_#802366_inset,3px_2px_0px_0px_#E67ACD_inset] relative"
+                    >
+                        Become a host
+                        <svg
+                            class="stroke-svg-light-pink ml-2 w-5 h-5"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M15.02 3.01001C14.18 2.37001 13.14 2 12 2C9.24 2 7 4.24 7 7C7 9.76 9.24 12 12 12C14.76 12 17 9.76 17 7"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                            </path>
+                            <path
+                                d="M20.5901 22C20.5901 18.13 16.7402 15 12.0002 15C7.26015 15 3.41016 18.13 3.41016 22"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                            </path>
+                        </svg>
+                    </button>
+
+                    <button
+                        class="p-[2px] rounded-2xl bg-gradient-to-r from-[#654AFF] to-[#4F1EE4]"
+                    >
+                        <div
+                            class="px-6 pt-3 pb-4 h-full w-full bg-background-purple rounded-2xl"
+                        >
+                            Learn more
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex gap-8">
+                <div
+                    class="relative before:absolute before:top-[71px] before:left-[-15px] before:w-[373px] before:h-[424px] before:bg-video-character"
+                >
+                    <!-- <img
+                    class="absolute content-none top-[71px] left-[-15px] max-w-[373px] max-h-[424]"
+                    src="/img/video/character.png" 
+                    alt=""
+                > -->
+
+                    <img
+                        class="rounded-[32px] max-w-none"
+                        src="/img/video/image1.png"
+                        alt=""
+                    />
+                </div>
+                <div
+                    class="relative before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:bg-gradient-to-t before:from-dark-purple 
+                    after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:transition-opacity after:bg-gradient-to-t after:from-dark-purple after:opacity-0 after:hover:opacity-100
+                    group overflow-hidden"
+                >
+                    <img
+                        class="rounded-[32px] max-w-none"
+                        src="/img/video/image2.png"
+                        alt=""
+                    />
+                    <div class="flex flex-col absolute z-10  bottom-8 left-8 right-8 translate-y-52 transition-transform group-hover:translate-y-0
+                        ">
+                        <h3 class="font-creepster text-3xl tracking-[-0.64px]">hot. explore. volcano.</h3>
+                        <p class="mt-1 text-sm font-normal text-light-purple">
+                            See what the volcano looks like and whether death
+                            can handle it
+                        </p>
+
+                        <button class="mt-5 flex items-center gap-x-2 text-xl text-yellow">
+                            <svg
+                                width="56"
+                                height="56"
+                                viewBox="0 0 56 56"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    opacity="0.4"
+                                    d="M44.4966 46.2467C44.0533 46.2467 43.6099 46.0833 43.2599 45.7333C42.5833 45.0567 42.5833 43.9367 43.2599 43.26C51.6833 34.8367 51.6833 21.1401 43.2599 12.7401C42.5833 12.0634 42.5833 10.9434 43.2599 10.2668C43.9366 9.59011 45.0566 9.59011 45.7333 10.2668C55.5099 20.0434 55.5099 35.9567 45.7333 45.7333C45.3833 46.0833 44.9399 46.2467 44.4966 46.2467Z"
+                                    fill="#E4B02A"></path>
+                                <path
+                                    opacity="0.4"
+                                    d="M11.5032 46.2467C11.0599 46.2467 10.6166 46.0833 10.2666 45.7333C0.489915 35.9567 0.489915 20.0434 10.2666 10.2668C10.9432 9.59011 12.0632 9.59011 12.7399 10.2668C13.4166 10.9434 13.4166 12.0634 12.7399 12.7401C4.31658 21.1634 4.31658 34.86 12.7399 43.26C13.4166 43.9367 13.4166 45.0567 12.7399 45.7333C12.3899 46.0833 11.9466 46.2467 11.5032 46.2467Z"
+                                    fill="#E4B02A"></path>
+                                <path
+                                    opacity="0.4"
+                                    d="M28.0001 52.9901C25.0834 52.9668 22.3068 52.5 19.7168 51.59C18.8068 51.2633 18.3167 50.2601 18.6434 49.3501C18.9701 48.4401 19.9501 47.9501 20.8835 48.2767C23.1235 49.0467 25.5035 49.4667 28.0235 49.4667C30.5201 49.4667 32.9234 49.0467 35.1401 48.2767C36.0501 47.9734 37.0534 48.4401 37.3801 49.3501C37.7067 50.2601 37.2168 51.2633 36.3068 51.59C33.6934 52.5 30.9168 52.9901 28.0001 52.9901Z"
+                                    fill="#E4B02A"></path>
+                                <path
+                                    opacity="0.4"
+                                    d="M35.6999 7.79346C35.5133 7.79346 35.3033 7.77003 35.1166 7.70003C32.8766 6.93003 30.4733 6.51001 27.9766 6.51001C25.4799 6.51001 23.1 6.93003 20.86 7.70003C19.95 8.00337 18.9467 7.53679 18.62 6.62679C18.2933 5.71679 18.7833 4.71341 19.6933 4.38674C22.2833 3.47674 25.0833 3.01001 27.9766 3.01001C30.8699 3.01001 33.67 3.47674 36.26 4.38674C37.17 4.71341 37.66 5.71679 37.3333 6.62679C37.1 7.35012 36.4233 7.79346 35.6999 7.79346Z"
+                                    fill="#E4B02A"></path>
+                                <path
+                                    d="M20.3936 28V24.1034C20.3936 19.25 23.8236 17.2667 28.0236 19.6933L31.4069 21.6534L34.7903 23.6133C38.9903 26.04 38.9903 30.0067 34.7903 32.4334L31.4069 34.3933L28.0236 36.3534C23.8236 38.78 20.3936 36.7967 20.3936 31.9433V28Z"
+                                    fill="#E4B02A"></path>
+                            </svg>
+                            Play video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
