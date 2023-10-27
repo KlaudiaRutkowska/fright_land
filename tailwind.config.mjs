@@ -47,7 +47,17 @@ export default {
 				'light-pink': '#FCEBF9',
 				'svg-light-purple': '#BDC1FF',
 				'svg-light-pink': '#F9D5F4'
-			}
+			},
+            backgroundImage: {
+                'btn-host': `
+                    url('/img/btn-host-tl-grass.svg'),
+                    url('/img/btn-host-br-grass.svg'),
+                    linear-gradient(to bottom right, var(--tw-gradient-stops))
+                `,
+            },
+            backgroundPosition: {
+                'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%'
+            },
 		},
 	},
 	plugins: [],
