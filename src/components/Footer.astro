@@ -3,7 +3,9 @@ import LogoFooter from "./LogoFooter.astro";
 import Divider from "./Divider.astro";
 ---
 
-<footer class="bg-dark-purple">
+<footer class="bg-dark-purple bg-footer-grass bg-no-repeat before:bg-no-repeat relative before:absolute 
+    before:bg-[url('/img/ivy.png')] before:top-[-49px] before:left-[20%] before:w-[191px] before:h-[70px]
+    after:absolute after:bg-[url('/img/pumpkins.png')] after:top-[-49px] after:right-[20%] after:w-[201px] after:h-[93px]">
   <div class="container flex flex-col gap-y-20 items-center py-24 font-bold tracking-[-0.36px]">
     <LogoFooter />
 
