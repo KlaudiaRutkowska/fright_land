@@ -1,0 +1,72 @@
+---
+import Tip from "./icon/Tip.astro";
+
+const { classList, picture, name, proffesion, rating } = Astro.props;
+
+const stars = Array(5).fill({});
+---
+
+<div class={classList} id="review">
+    <Tip
+        classList="absolute top-0 -left-[19.15px] transition-colors duration-300 text-middle-purple group-hover/review:text-dark-purple"
+    />
+
+    <p>
+        Viverra egestas congue posuere egestas. Quis eget fermentum, ut sagittis
+        scelerisque eu. Non nec accumsan, leo, semper arcu.
+    </p>
+    <div class="flex justify-between items-center text-sm">
+        <div class="flex items-center gap-x-4">
+            <img
+                src={picture}
+                alt=""
+                class="rounded-full shadow-[0_0_0_5px] shadow-dark-purple w-8 h-8"
+            />
+            <p>
+                <span class="block">{name}</span>
+                {proffesion}
+            </p>
+        </div>
+        <div class="flex flex-col items-end">
+            <p class="mb-[3px]">{rating}/5</p>
+            <div id="stars" class="flex gap-1">
+                {
+                    stars.map((rate, i) => {
+                        return rating > i ? (
+                            <img
+                                src="../../public/img/reviews/full-star.png"
+                                alt="Full star"
+                            />
+                        ) : (
+                            <img
+                                src="../../public/img/reviews/empty-star.png"
+                                alt="Empty star"
+                            />
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+
+    const review = document.querySelector('#review')
+    const rating = review.getAttribute('rating')
+    const remainingStars = 5 - Number(rating)
+
+    const starsContainer = document.querySelector('#stars')
+
+    console.log(Astro)
+
+     if(remainingStars <= rating) {
+        for (let index = 0; index < rating; index++) {
+            starsContainer.innerHTML += `<img src="../../public/img/reviews/full-star.png" alt="">`
+        }
+        for (let index = 0; index < remainingStars; index++) {
+            starsContainer.innerHTML += `<img src="../../public/img/reviews/empty-star.png" alt="">`
+        }
+     }
+
+</script> -->

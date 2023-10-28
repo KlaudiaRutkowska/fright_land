@@ -43,9 +43,11 @@ export default {
 			colors: {
 				'background-purple': '#160D3B',
                 'dark-purple': '#0B071E',
+                'middle-purple': '#110B2D',
 				'light-purple': '#DBDEFF',
 				'light-purple-button': '#EBEDFF',
 				'light-pink': '#FCEBF9',
+                'pink': '#C039A1',
 				'svg-light-purple': '#BDC1FF',
 				'svg-light-pink': '#F9D5F4',
                 'yellow': '#E4B02A'
@@ -66,12 +68,19 @@ export default {
                     url('/img/bg-footer-grass1.svg'),
                     url('/img/bg-footer-grass2.svg')
                 `,
+                'review': `url('/img/reviews/bg-review.png')`,
+                'review-grass': `
+                    url('/img/reviews/bg-review-grass1.svg'),
+                    url('/img/reviews/bg-review-grass2.svg')
+                `,
             },
             backgroundPosition: {
                 'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%',
                 'video': 'center center',
                 'video-section': 'top 0 left 32%, bottom 0 left 16%',
                 'footer-grass': 'top -4px left 49%, top -9px center',
+                'review': 'bottom 0 center',
+                'review-grass': 'top -3px left 10%, bottom -5px right 45%'
             },
 		},
 	},
