@@ -64,6 +64,10 @@ export default {
                     url('/img/video/bg-video-bricks.png')
                 `,
                 'video-character': `url('/img/video/character.png')`,
+                'shop': `
+                    url('/img/bg-shop-grass.svg'),
+                    url('/img/bg-shop-bricks.png')
+                `,
                 'footer-grass': `
                     url('/img/bg-footer-grass1.svg'),
                     url('/img/bg-footer-grass2.svg')
@@ -73,11 +77,13 @@ export default {
                     url('/img/reviews/bg-review-grass1.svg'),
                     url('/img/reviews/bg-review-grass2.svg')
                 `,
+
             },
             backgroundPosition: {
                 'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%',
                 'video': 'center center',
                 'video-section': 'top 0 left 32%, bottom 0 left 16%',
+                'shop': 'top -7px left 45%, bottom left',
                 'footer-grass': 'top -4px left 49%, top -9px center',
                 'review': 'bottom 0 center',
                 'review-grass': 'top -3px left 10%, bottom -5px right 45%'
