@@ -31,18 +31,19 @@ import Button from "./button/Button.astro";
 
                     <div class="mt-[46px] flex flex-col gap-6">
                         <Review 
-                            classList='px-8 py-6 max-w-[457px] self-end flex flex-col gap-y-6 relative bg-middle-purple hover:bg-dark-purple transition-colors duration-300 bg-no-repeat rounded-r-[48px] rounded-b-[48px] group/review' 
+                            content="Viverra egestas congue posuere egestas. Quis eget fermentum, ut sagittis scelerisque eu. Non nec accumsan, leo, semper arcu."
                             picture="../../public/img/reviews/person1.png"
                             name="Indiana Jones"
                             proffesion="Traveler"
-                            rating="4"
+                            rating={4}
                         />
                         <Review 
-                            classList='px-8 py-6 max-w-[457px] ml-5 flex flex-col gap-y-6 relative bg-middle-purple hover:bg-dark-purple transition-colors duration-300 bg-no-repeat rounded-r-[48px] rounded-b-[48px] group/review' 
+                            content="Viverra egestas congue posuere egestas. Quis eget fermentum, ut sagittis scelerisque eu. Non nec accumsan, leo, semper arcu." 
                             picture="../../public/img/reviews/person2.png"
                             name="Random Guy"
                             proffesion="Traveler"
-                            rating="5"
+                            variant="left"
+                            rating={5}
                         />
 
                     </div>
