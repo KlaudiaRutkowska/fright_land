@@ -1,45 +1,67 @@
 ---
-import User from './User.astro'
-import Login from './Login.astro'
-import Basket from './Basket.astro';
+import User from "./User.astro";
+import Login from "./Login.astro";
+import Basket from "./Basket.astro";
+import Play from "./Play.astro";
 
 const variants = {
     pink: {
-        button: 'pt-[13px] pb-[17px] font-bold text-light-pink rounded-2xl bg-btn-host bg-no-repeat from-[#EC56C9] to-[#9F2A7E] shadow-[0px_5px_50px_0px_rgba(192,57,161,0.25),_-2px_-3px_0px_0px_#802366_inset,3px_2px_0px_0px_#E67ACD_inset] relative',
-        container: 'flex items-center px-6 ',
-        svg: ''
+        button: "pt-[13px] pb-[17px] font-bold text-light-pink rounded-2xl bg-btn-host bg-no-repeat from-[#EC56C9] to-[#9F2A7E] shadow-[0px_5px_50px_0px_rgba(192,57,161,0.25),_-2px_-3px_0px_0px_#802366_inset,3px_2px_0px_0px_#E67ACD_inset] relative",
+        container: "flex items-center px-6 ",
+        svg: "",
     },
     purple: {
-        button: 'p-[2px] rounded-2xl font-bold bg-gradient-to-r from-[#654AFF] to-[#4F1EE4]',
-        container: 'flex items-center px-6 pt-3 pb-4 h-full w-full bg-background-purple rounded-2xl',
-        svg: 'text-svg-light-purple'
-    }
+        button: "p-[2px] rounded-2xl font-bold bg-gradient-to-r from-[#654AFF] to-[#4F1EE4]",
+        container:
+            "flex items-center px-6 pt-3 pb-4 h-full w-full bg-background-purple rounded-2xl",
+        svg: "text-svg-light-purple",
+    },
+    emptyYellow: {
+        button: "mt-5  text-xl text-yellow",
+        container: "flex items-center gap-x-2",
+        svg: "",
+    },
 };
 
 const icons = {
-    'user': User,
-    'login': Login,
-    'basket': Basket,
-}
+    user: User,
+    login: Login,
+    basket: Basket,
+    play: Play,
+};
 
 interface Props {
     content?: string;
     variant?: keyof typeof variants;
     class?: string;
     icon?: keyof typeof icons;
+    iconPosition?: "left" | "right";
 }
 
-const { content, variant = "pink", class: className, icon } = Astro.props;
+const {
+    content,
+    variant = "pink",
+    class: className,
+    icon,
+    iconPosition = "right",
+} = Astro.props;
 
-let Component = icons[icon] || Fragment
+let Component = icons[icon] || Fragment;
 ---
 
-<button
-    class:list={ [variants[variant]['button'], className] }
->
-    <div class:list={[variants[variant]['container']]}>
-        { content }
-        <Component class:list={[variants[variant]['svg']]}/>
+<button class:list={[variants[variant]["button"], className]}>
+    <div class:list={[variants[variant]["container"]]}>
+        {
+            iconPosition === "left" && (
+                <Component class:list={[variants[variant]["svg"]]} />
+            )
+        }
+        {content}
+        {
+            iconPosition === "right" && (
+                <Component class:list={[variants[variant]["svg"]]} />
+            )
+        }
         <!-- {
             Object.keys(icons).map(iconName => {
                 const Component = icons[iconName]
