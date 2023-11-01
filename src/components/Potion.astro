@@ -1,0 +1,50 @@
+---
+import Button from "./button/Button.astro";
+
+interface Props {
+    image: string;
+    name: string;
+    description: string;
+    price: string;
+}
+
+const { image, name, description, price } = Astro.props;
+
+const imgSrc = "../../public/img/potions/" + image + ".png"
+const imgAlt = name + " image"
+---
+
+<div
+    id="potion"
+    class="max-w-[457px] p-6 flex items-center gap-x-6 bg-middle-purple rounded-[48px]"
+>
+    <img
+        src={imgSrc}
+        alt={imgAlt}
+        class="w-[136px] h-[136px]"
+    />
+    <div class="flex flex-col gap-1">
+        <div class="py-2 flex flex-col gap-1">
+            <h3
+                class="font-creepster text-[40px] font-normal tracking-[-0.8px] leading-none"
+            >
+                {name}
+            </h3>
+            <p class="text-sm font-normal tracking-[-0.28px]">
+                {description}
+            </p>
+        </div>
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <p class="text-2xl text-pink font-semibold tracking-[-0.48px leading-none">
+                    
+                    ${price}
+                </p>
+                <p class="text-sm font-normal leading-none tracking-[-0.28px]">
+                    /elixir
+                </p>
+            </div>
+            <Button icon="basket" class="px-[15px]" />
+        </div>
+    </div>
+</div>
