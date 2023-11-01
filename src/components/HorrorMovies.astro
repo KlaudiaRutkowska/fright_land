@@ -1,0 +1,34 @@
+---
+import Button from "./button/Button.astro";
+---
+
+<section id="horror-movies">
+    <div class="pt-11 flex items-center gap-[150px]">
+        <div class="flex gap-[30px]">
+            <div>
+                <img 
+                    src="/img/horror-movies/horror-movie1.jpg"
+                    alt=""
+                    class="rounded-r-[48px]"
+                >
+            </div>
+            <div class="relative before:absolute before:bg-horror-movie-character before:bottom-[7px] before:left-20 before:w-[498px] before:h-[361px]">
+                <img 
+                    src="/img/horror-movies/horror-movie2.jpg"
+                    alt=""
+                    class="rounded-[48px]"
+                >
+            </div>
+        </div>
+        <div>
+            <h3 class="mb-6 text-pink text-base font-semibold tracking-[-0.32px] leading-none">LOOKING FOR A THRILL?</h3>
+            <h2 class="mb-4 max-w-[480px] text-white font-creepster text-8xl font-normal tracking-[-1.92px] leading-none">night horror movies</h2>
+            <p class="mb-4 max-w-[364px]">Any horror lover will find something to immerse themselves in the spooky atmosphere.</p>
+
+            <div class="mt-10 flex justify-start gap-3">
+                <Button content="Become a host" icon="user" />
+                <Button variant="purple" content="Learn more" />
+            </div>
+        </div>
+    </div>
+</section>
