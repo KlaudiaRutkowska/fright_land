@@ -77,6 +77,7 @@ export default {
                     url('/img/reviews/bg-review-grass1.svg'),
                     url('/img/reviews/bg-review-grass2.svg')
                 `,
+                'horror-movie-character': `url('/img/horror-movies/mummy.png')`
 
             },
             backgroundPosition: {
