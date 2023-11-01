@@ -78,7 +78,11 @@ export default {
                     url('/img/reviews/bg-review-grass2.svg')
                 `,
                 'horror-movie-section': `url('/img/horror-movies/bg-horror-movie.png')`,
-                'horror-movie-character': `url('/img/horror-movies/mummy.png')`
+                'horror-movie-character': `url('/img/horror-movies/mummy.png')`,
+                'sponsors-section': `
+                    url('/img/sponsors/bg-shadow-left.svg'),
+                    url('/img/sponsors/bg-shadow-right.svg')
+                `,
 
             },
             backgroundPosition: {
@@ -88,7 +92,8 @@ export default {
                 'shop': 'top -7px left 45%, bottom left',
                 'footer-grass': 'top -4px left 49%, top -9px center',
                 'review': 'bottom 0 center',
-                'review-grass': 'top -3px left 10%, bottom -5px right 45%'
+                'review-grass': 'top -3px left 10%, bottom -5px right 45%',
+                'sponsors-section': 'left 0, right 0'
             },
 		},
 	},
