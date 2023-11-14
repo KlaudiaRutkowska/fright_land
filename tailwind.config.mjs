@@ -83,6 +83,7 @@ export default {
                     url('/img/sponsors/bg-shadow-left.svg'),
                     url('/img/sponsors/bg-shadow-right.svg')
                 `,
+                'fear-range': `url('/img/fear-range/bg-fear-range.png')`,
 
             },
             backgroundPosition: {
@@ -93,7 +94,8 @@ export default {
                 'footer-grass': 'top -4px left 49%, top -9px center',
                 'review': 'bottom 0 center',
                 'review-grass': 'top -3px left 10%, bottom -5px right 45%',
-                'sponsors-section': 'left 0, right 0'
+                'sponsors-section': 'left 0, right 0',
+                
             },
 		},
 	},

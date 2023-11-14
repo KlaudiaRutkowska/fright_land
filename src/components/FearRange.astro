@@ -1,0 +1,218 @@
+---
+import Button from "./button/Button.astro";
+---
+
+<section id="fear-range" class="bg-fear-range bg-no-repeat bg-cover">
+    <div class="container">
+        <div
+            class="max-w-[934px] mx-auto mt-[200px] mb-[150px] flex flex-col items-center"
+        >
+            <div class="flex flex-col items-center text-center">
+                <h3
+                    class="mb-6 text-pink text-base font-semibold tracking-[-0.32px] leading-none"
+                >
+                    LOOKING FOR A THRILL?
+                </h3>
+                <h2
+                    class="mb-4 max-w-[480px] text-white font-creepster text-7xl font-normal tracking-[-1.92px] leading-none"
+                >
+                    choose how badly you want to die of fear
+                </h2>
+                <p class="mb-4 max-w-[364px]">
+                    Or have you already died of fear with us? Choose your own
+                    tombstoneh
+                </p>
+            </div>
+
+            <div class="flex items-end mb-[70px]">
+                <img
+                    src="../../public/img/fear-range/small-grave.png"
+                    alt="small grave image"
+                    class=""
+                />
+                <img
+                    src="../../public/img/fear-range/medium-grave.png"
+                    alt="medium grave image"
+                    class="ml-36 mr-28"
+                />
+                <img
+                    src="../../public/img/fear-range/big-grave.png"
+                    alt="big grave image"
+                    class=""
+                />
+            </div>
+
+            <div class="bg-dark-purple px-[7px] h-[30px] w-full max-w-[695px] rounded-full flex items-center">
+                <div class="range-content">
+                    <div class="range-track">
+                        <div id="range-line" class="range-track-line"></div>
+                    </div>
+
+                    <div id="range-thumb" class="range-thumb"></div>
+
+                    <input
+                        id="range-input"
+                        type="range"
+                        class="range-input"
+                        min="0"
+                        max="100"
+                        step="50"
+                        value="50"
+                    />
+
+                    <div class="ticks h-5"></div>
+                </div>
+            </div>
+
+            <div class="mb-20 mt-[66px] flex gap-x-[66px]">
+                <div class="flex flex-col items-center gap-1">
+                    <h3 class="font-creepster text-[32px] text-white font-normal leading-none tracking-[-0.64px]">smell of fear</h3>
+                    <p class="text-sm tracking-[-0.28px] text-center">Leo phasellus id neque volutpat enim, ut posuere pellentesque. Quis tellus nisl.</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <h3 class="font-creepster text-[32px] text-white font-normal leading-none tracking-[-0.64px]">scared stiff</h3>
+                    <p class="text-sm tracking-[-0.28px] text-center">Porttitor aliquet porttitor imperdiet ante nisl aliquam. Leo malesuada lectus.</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <h3 class="font-creepster text-[32px] text-white font-normal leading-none tracking-[-0.64px]">deadly creepys</h3>
+                    <p class="text-sm tracking-[-0.28px] text-center">In habitasse mi, donec eu, metus. Sodales in mauris ut sagittis nulla cras sapien.</p>
+                </div>
+                
+            </div>
+
+            <Button content="Become a host" icon="user" />
+        </div>
+    </div>
+</section>
+
+<style is:global>
+    .range-content {
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .range-track {
+        width: 100%;
+        height: 16px;
+        border-radius: 999px;
+    }
+
+    .range-track-line {
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(96deg, #ec56c9 0%, #9f2a7e 100%);
+        box-shadow:
+            0px 5px 50px 0px rgba(192, 57, 161, 0.25),
+            3px 2px 0px 0px #e67acd inset,
+            -2px -3px 0px 0px #802366 inset;
+    }
+
+    .range-thumb {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        background: linear-gradient(96deg, #ec56c9 0%, #9f2a7e 100%);
+        box-shadow:
+            0px 5px 50px 0px rgba(192, 57, 161, 0.25),
+            3px 2px 0px 0px #e67acd inset,
+            -2px -3px 0px 0px #802366 inset;
+    }
+
+    .range-thumb::before {
+        position: absolute;
+        content: "";
+        top: 7px;
+        left: 7px;
+        z-index: 100;
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+        background: #dbdeff;
+    }
+
+    .range-input {
+        appearance: none;
+        z-index: 200;
+        width: 100%;
+        height: 16px;
+        position: absolute;
+        bottom: 0;
+        background-color: red;
+        opacity: 0;
+    }
+
+    .range-input::-webkit-slider-thumb,
+    .range-input::-moz-range-thumb {
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        background-color: green;
+        cursor: pointer;
+    }
+
+    .ticks {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 41px;
+        padding-inline: 20px;
+    }
+
+    .tick {
+        display: block;
+        height: 23px;
+        width: 2px;
+        background-color: #bdc1ff;
+        opacity: 25%;
+    }
+</style>
+
+<script is:inline>
+    const rangeThumb = document.getElementById("range-thumb")
+    const rangeLine = document.getElementById("range-line")
+    const rangeInput = document.getElementById("range-input")
+
+    const ticks = document.querySelector(".ticks")
+    const ticksCount = (rangeInput.getAttribute("max") - rangeInput.getAttribute("min")) / rangeInput.getAttribute("step")
+
+    for (let i = 0; i <= ticksCount; i++) {
+        let tick = document.createElement("div")
+        tick.className = "tick"
+        tick.id = "tick" + (i)
+        ticks.appendChild(tick)
+    }
+    console.log(ticks);
+
+    const rangeInputSlider = () => {
+        //calculate the position of the thumb
+        //rangeInput.value = 50, rangeInput.max = 100 -> 50/100 = 0.5
+        const thumbPosition = rangeInput.value / rangeInput.max
+        const space = rangeInput.offsetWidth - rangeThumb.offsetWidth
+
+        //insert the position of the input thumb
+        rangeThumb.style.left = (thumbPosition * space) + 'px'
+        //insert width to the slider with the value of the input value 
+        rangeLine.style.width = rangeInput.value + '%'
+
+        const tick = document.querySelectorAll(".tick")
+        for (let i = 0; i <= ticksCount; i++) {
+            //set all ticks with opacity 25%
+            tick[i].style.opacity = "25%"
+        }
+        //set current tick with opacity 100%
+        tick[((rangeInput.min + rangeInput.value) / rangeInput.step)].style.opacity = "100%"
+
+        rangeInput.addEventListener("input", rangeInputSlider)
+    }
+
+    rangeInputSlider()
+</script>
