@@ -1,0 +1,73 @@
+---
+import Button from "./button/Button.astro";
+import Lesser from "./Lesser.astro";
+
+---
+
+<section id="lessors">
+    <div class="container flex flex-col gap-y-20">
+        <div class="flex flex-col items-center">
+            <h3 class="mb-6 text-pink text-base font-semibold tracking-[-0.32px] leading-none">
+                LOOKING FOR A THRILL?
+            </h3>
+            <h2 class="mb-4 text-white font-creepster text-7xl font-normal tracking-[-1.92px] leading-none">
+                most popular lessors
+            </h2>
+            <p class="mb-4 max-w-[373px] text-center">
+                Any lover of fear will find something here to immerse themselves in the spooky atmosphere.
+            </p>
+        </div>
+
+        <div class="max-w-[1410]">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <Lesser image="ghost" name="ghost" icon="house" iconName="houses" iconCount="666"/>
+                    <Lesser image="zombie" name="mr. zombie" icon="grave" iconName="graves" iconCount="24"/>
+                    <Lesser image="dracula" name="dracula" icon="grave" iconName="castles" iconCount="24"/>
+                    <Lesser image="mummy" name="mummy" icon="coffin" iconName="coffins" iconCount="578"/>
+                    <Lesser image="mummy" name="mummy" icon="coffin" iconName="coffins" iconCount="578"/>
+                </div>
+                <div class="swiper-button-prev absolute left-[-15px]"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+        <div class="flex flex-col items-center">
+            <p class="mb-4 max-w-[373px] text-center">
+                Want to be one of them? Join us now for free! Your one drop of 🩸 is enough for us.
+            </p>
+            <Button content="Become a user" icon="user" />
+        </div>
+    </div>
+</section>
+
+<script>
+    // import Swiper bundle with all modules installed
+    import Swiper from 'swiper/bundle';
+
+    // import styles bundle
+    import 'swiper/css/bundle';
+
+    const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: true,
+        spaceBetween: 30,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        slidesPerView: 4,
+        // autoplay: {
+        //     delay: 5000,
+        // },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
