@@ -1,61 +1,97 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+    title: string;
+    image?: string;
+    imageName?: string;
+    visitorsCount?: string;
+    reviewsCount?: string;
+    class?: string;
 }
 
-const { href, title, body } = Astro.props;
----
+const {
+    title,
+    image,
+    imageName,
+    visitorsCount,
+    reviewsCount,
+    class: className,
+} = Astro.props;
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+const imgSrc = "../../public/img/places-gallery/" + image + ".jpg"
+const imgAlt = imageName + " image"
+---
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+    div {
+        transform: translateY(var(--y));
+        --y: 0px;
+    }
+</style>
+
+
+<div class:list={[ className, 'transition-transform duration-300 !translate-y-[var(--y)]' ]} style="--y: 0px;">
+    <div class="p-8 h-[542px] bg-dark-purple bg-card-grass bg-no-repeat rounded-[48px] flex flex-col gap-[41px]">
+        <div class="swiper slides h-[266px] w-[266px] rounded-[32px]">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src={ imgSrc } alt={ imgAlt }>
+                </div>
+                <div class="swiper-slide">
+                    <img src={ imgSrc } alt={ imgAlt }>
+                </div>
+                <div class="swiper-slide">
+                    <img src={ imgSrc } alt={ imgAlt }>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="flex flex-col gap-y-8">
+            <h3 class="text-white h-20 font-creepster text-[40px] font-normal leading-none tracking-[-0.8px]">{ title }</h3>
+            <div class="flex justify-between">
+                <div class="flex flex-col">
+                    <p>{ visitorsCount } visitors</p>
+                    <div>
+                        user icons
+                    </div>
+                </div>
+                <div>
+                    <p>{ reviewsCount } reviews</p>
+                    <div>
+                        stars rate
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // import Swiper bundle with all modules installed
+    import Swiper from 'swiper/bundle';
+
+    // import styles bundle
+    import 'swiper/css/bundle';
+
+    const sliders = document.querySelectorAll<HTMLElement>('.slides')
+
+    sliders.forEach(slider => {
+        new Swiper(slider, {
+            nested: true,
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                bulletClass: 'swiper-pagination-bullet bg-light-purple'
+            },
+        });
+    })
+</script>
+
+<style>
+    :root {
+        --swiper-pagination-bullet-inactive-opacity: 0.5;
+        --swiper-theme-color: theme(colors.light-purple);
+        --swiper-pagination-bullet-inactive-color: theme(colors.light-purple);
+    }
 </style>

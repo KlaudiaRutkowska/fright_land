@@ -1,0 +1,121 @@
+---
+import Card from "./Card.astro";
+---
+
+<section id="places-gallery">
+    <div class="container mb-20">
+        <div class="flex flex-col items-center">
+            <h3 class="mb-6 text-pink text-base font-semibold tracking-[-0.32px] leading-none">
+                LOOKING FOR A THRILL?
+            </h3>
+            <h2 class="mb-4 text-white font-creepster text-7xl font-normal tracking-[-1.44px] leading-none">
+                places that guests love
+            </h2>
+            <p class="mb-4 max-w-[373px] text-center">
+                Any horror lover will find something to immerse themselves in the spooky atmosphere.
+            </p>
+        </div>
+
+        <div class="slider relative">
+            <div id="places" class="swiper select-none">
+                <div class="swiper-wrapper py-10">
+                    <Card class="swiper-slide" title="chamber of impure magic" image="chamber-of-impure-magic" imageName="Chamber ofimpure magic image" visitorsCount="15784" reviewsCount="7,892"/>
+                    <Card class="swiper-slide" title="old grave" image="old-grave" imageName="Old grave image" visitorsCount="10231" reviewsCount="4123"/>
+                    <Card class="swiper-slide" title="dead hangman's hut" image="dead-hangmans-hut" imageName="Dead hangman's hut image" visitorsCount="6872" reviewsCount="7043"/>
+                    <Card class="swiper-slide" title="zombieland" image="zombieland" imageName="Zombieland image" visitorsCount="17031" reviewsCount="2213"/>
+                    <Card class="swiper-slide" title="chamber of impure magic" image="chamber-of-impure-magic" imageName="Chamber ofimpure magic image" visitorsCount="15784" reviewsCount="7,892"/>
+                    <Card class="swiper-slide" title="old grave" image="old-grave" imageName="Old grave image" visitorsCount="10231" reviewsCount="4123"/>
+                    <Card class="swiper-slide" title="dead hangman's hut" image="dead-hangmans-hut" imageName="Dead hangman's hut image" visitorsCount="6872" reviewsCount="7043"/>
+                    <Card class="swiper-slide" title="zombieland" image="zombieland" imageName="Zombieland image" visitorsCount="17031" reviewsCount="2213"/>
+                </div>
+                <div class="swiper-pagination !static mt-6"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .slider::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: -20px;
+        z-index: 100;
+        background-image: url('../../public/img/places-gallery/pumpkin1.png');
+        background-repeat: no-repeat;
+        width: 68px;
+        height: 68px;
+    }
+    .slider::after {
+        content: "";
+        position: absolute;
+        bottom: 61.5px;
+        right: -30px;
+        z-index: 100;
+        background-image: url('../../public/img/places-gallery/pumpkin2.png');
+        background-repeat: no-repeat;
+        width: 47px;
+        height: 47px;
+    }
+</style>
+
+<script>
+    // import Swiper bundle with all modules installed
+    import Swiper from 'swiper/bundle';
+
+    // import styles bundle
+    import 'swiper/css/bundle';
+
+    const swiper = new Swiper('#places', {
+        //disable swiper initialization
+        init: false,
+        watchSlidesProgress: true,
+        autoplay: {
+            delay: 5000,
+            pauseOnMouseEnter: true,
+        },
+        direction: 'horizontal',
+        spaceBetween: 30,
+        slidesPerView: 4,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    //positions for visible slides
+    const positions = [
+        '-40px',
+        '8px',
+        '-8px',
+        '40px'
+    ]
+
+    const updateSlidesPosition = () => {
+        //get all slides with class "swiper-slide-visible"
+        const visible = swiper.slides.filter(slide => {
+            return slide.classList.contains('swiper-slide-visible')
+        })
+
+        //reset --y position on all slides
+        swiper.slides.forEach(slide => {
+            //--y is a css variable used in slide style by translateY to change vertical position
+            slide.style.setProperty('--y', '0px')
+        })
+
+        //iterate over all visible slides
+        visible.forEach((visibleSlide, index) => {
+            //find position for visible slide, if index in positions array doesn't exist give default value 0px
+            const position = positions[index] || '0px'
+
+            //set style property --y to value of position variable
+            visibleSlide.style.setProperty('--y', position)
+        })
+    }
+
+    swiper.on('slideChange', updateSlidesPosition)
+    swiper.on('init', updateSlidesPosition)
+
+    //initiate swiper
+    swiper.init()
+</script>
