@@ -84,7 +84,10 @@ export default {
                     url('/img/sponsors/bg-shadow-right.svg')
                 `,
                 'fear-range': `url('/img/fear-range/bg-fear-range.png')`,
-
+                'card-grass': `
+                    url('/img/places-gallery/grass1.svg'),
+                    url('/img/places-gallery/grass2.svg')
+                `
             },
             backgroundPosition: {
                 'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%',
@@ -95,7 +98,7 @@ export default {
                 'review': 'bottom 0 center',
                 'review-grass': 'top -3px left 10%, bottom -5px right 45%',
                 'sponsors-section': 'left 0, right 0',
-                
+                'card-grass': 'top -4px left 63px, bottom 116px right -5px'
             },
 		},
 	},
