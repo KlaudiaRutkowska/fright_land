@@ -1,10 +1,13 @@
 ---
+import type { Code } from "astro:components";
 interface Props {
     title: string;
     image?: string;
     imageName?: string;
     visitorsCount?: string;
+    visitorsIcons?: string[];
     reviewsCount?: string;
+    reviewsRating?: number;
     class?: string;
 }
 
@@ -13,13 +16,27 @@ const {
     image,
     imageName,
     visitorsCount,
+    visitorsIcons,
     reviewsCount,
+    reviewsRating,
     class: className,
 } = Astro.props;
 
-const imgSrc = "../../public/img/places-gallery/" + image + ".jpg"
-const imgAlt = imageName + " image"
+const imgSrc = "../../public/img/places-gallery/" + image + ".jpg";
+const imgAlt = imageName + " image";
+
+let visitors = [];
+
+visitorsIcons.forEach((icon, i) => {
+    visitors.push({
+        alt: icon + " picture",
+        src: "../../public/img/reviews/" + icon + ".png",
+    });
+});
+
+const stars = Array(5).fill({});
 ---
+
 <style>
     div {
         transform: translateY(var(--y));
@@ -27,36 +44,65 @@ const imgAlt = imageName + " image"
     }
 </style>
 
-
-<div class:list={[ className, 'transition-transform duration-300 !translate-y-[var(--y)]' ]} style="--y: 0px;">
-    <div class="p-8 h-[542px] bg-dark-purple bg-card-grass bg-no-repeat rounded-[48px] flex flex-col gap-[41px]">
+<div
+    class:list={[
+        className,
+        "transition-transform duration-300 !translate-y-[var(--y)]",
+    ]}
+    style="--y: 0px;"
+>
+    <div
+        class="p-8 h-[542px] bg-dark-purple bg-card-grass bg-no-repeat rounded-[48px] flex flex-col gap-[41px]"
+    >
         <div class="swiper slides h-[266px] w-[266px] rounded-[32px]">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src={ imgSrc } alt={ imgAlt }>
+                    <img src={imgSrc} alt={imgAlt} />
                 </div>
                 <div class="swiper-slide">
-                    <img src={ imgSrc } alt={ imgAlt }>
+                    <img src={imgSrc} alt={imgAlt} />
                 </div>
                 <div class="swiper-slide">
-                    <img src={ imgSrc } alt={ imgAlt }>
+                    <img src={imgSrc} alt={imgAlt} />
                 </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
         <div class="flex flex-col gap-y-8">
-            <h3 class="text-white h-20 font-creepster text-[40px] font-normal leading-none tracking-[-0.8px]">{ title }</h3>
-            <div class="flex justify-between">
-                <div class="flex flex-col">
-                    <p>{ visitorsCount } visitors</p>
-                    <div>
-                        user icons
+            <h3
+                class="text-white h-20 font-creepster text-[40px] font-normal leading-none tracking-[-0.8px]"
+            >
+                {title}
+            </h3>
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-y-2">
+                    <p>{visitorsCount} visitors</p>
+                    <div class="flex -space-x-2">
+                        {
+                            visitors.map((icon) => (
+                                <img class="w-8 h-8 rounded-full shadow-[0_0_0_5px] shadow-dark-purple" src={icon.src} alt={icon.alt} />
+                            ))
+                        }
                     </div>
                 </div>
-                <div>
-                    <p>{ reviewsCount } reviews</p>
-                    <div>
-                        stars rate
+                <div class="flex flex-col gap-y-2">
+                    <p>{reviewsCount} reviews</p>
+                    <div class="flex gap-x-1 py-2">
+                        {
+                            stars.map((rate, i) => {
+                                return reviewsRating > i ? (
+                                    <img
+                                        src="../../public/img/reviews/full-star.png"
+                                        alt="Full star"
+                                    />
+                                ) : (
+                                    <img
+                                        src="../../public/img/reviews/empty-star.png"
+                                        alt="Empty star"
+                                    />
+                                );
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -66,26 +112,26 @@ const imgAlt = imageName + " image"
 
 <script>
     // import Swiper bundle with all modules installed
-    import Swiper from 'swiper/bundle';
+    import Swiper from "swiper/bundle";
 
     // import styles bundle
-    import 'swiper/css/bundle';
+    import "swiper/css/bundle";
 
-    const sliders = document.querySelectorAll<HTMLElement>('.slides')
+    const sliders = document.querySelectorAll<HTMLElement>(".slides");
 
-    sliders.forEach(slider => {
+    sliders.forEach((slider) => {
         new Swiper(slider, {
             nested: true,
-            direction: 'horizontal',
+            direction: "horizontal",
             loop: true,
             slidesPerView: 1,
             pagination: {
-                el: '.swiper-pagination',
+                el: ".swiper-pagination",
                 clickable: true,
-                bulletClass: 'swiper-pagination-bullet bg-light-purple'
+                bulletClass: "swiper-pagination-bullet bg-light-purple",
             },
         });
-    })
+    });
 </script>
 
 <style>
