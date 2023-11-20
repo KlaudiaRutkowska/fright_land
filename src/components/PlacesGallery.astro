@@ -19,14 +19,14 @@ import Card from "./Card.astro";
         <div class="slider relative">
             <div id="places" class="swiper select-none">
                 <div class="swiper-wrapper py-10">
-                    <Card class="swiper-slide" title="chamber of impure magic" image="chamber-of-impure-magic" imageName="Chamber ofimpure magic image" visitorsCount="15784" reviewsCount="7,892"/>
-                    <Card class="swiper-slide" title="old grave" image="old-grave" imageName="Old grave image" visitorsCount="10231" reviewsCount="4123"/>
-                    <Card class="swiper-slide" title="dead hangman's hut" image="dead-hangmans-hut" imageName="Dead hangman's hut image" visitorsCount="6872" reviewsCount="7043"/>
-                    <Card class="swiper-slide" title="zombieland" image="zombieland" imageName="Zombieland image" visitorsCount="17031" reviewsCount="2213"/>
-                    <Card class="swiper-slide" title="chamber of impure magic" image="chamber-of-impure-magic" imageName="Chamber ofimpure magic image" visitorsCount="15784" reviewsCount="7,892"/>
-                    <Card class="swiper-slide" title="old grave" image="old-grave" imageName="Old grave image" visitorsCount="10231" reviewsCount="4123"/>
-                    <Card class="swiper-slide" title="dead hangman's hut" image="dead-hangmans-hut" imageName="Dead hangman's hut image" visitorsCount="6872" reviewsCount="7043"/>
-                    <Card class="swiper-slide" title="zombieland" image="zombieland" imageName="Zombieland image" visitorsCount="17031" reviewsCount="2213"/>
+                    <Card class="swiper-slide" title="chamber of impure magic" image="chamber-of-impure-magic" imageName="Chamber ofimpure magic image" visitorsCount="15784" reviewsCount="7,892" reviewsRating={5} visitorsIcons={['person1', 'person3', 'person2', 'person4']}/>
+                    <Card class="swiper-slide" title="old grave" image="old-grave" imageName="Old grave image" visitorsCount="10231" reviewsCount="4123" reviewsRating={4} visitorsIcons={['person1', 'person5', 'person2', 'person6']}/>
+                    <Card class="swiper-slide" title="dead hangman's hut" image="dead-hangmans-hut" imageName="Dead hangman's hut image" visitorsCount="6872" reviewsCount="7043" reviewsRating={4} visitorsIcons={['person2', 'person3', 'person4', 'person1']}/>
+                    <Card class="swiper-slide" title="zombieland" image="zombieland" imageName="Zombieland image" visitorsCount="17031" reviewsCount="2213" reviewsRating={5} visitorsIcons={['person4', 'person5', 'person2', 'person3']}/>
+                    <Card class="swiper-slide" title="chamber of impure magic" image="chamber-of-impure-magic" imageName="Chamber ofimpure magic image" visitorsCount="15784" reviewsCount="7,892" reviewsRating={5} visitorsIcons={['person1', 'person3', 'person2', 'person4']}/>
+                    <Card class="swiper-slide" title="old grave" image="old-grave" imageName="Old grave image" visitorsCount="10231" reviewsCount="4123" reviewsRating={4} visitorsIcons={['person1', 'person5', 'person2', 'person6']}/>
+                    <Card class="swiper-slide" title="dead hangman's hut" image="dead-hangmans-hut" imageName="Dead hangman's hut image" visitorsCount="6872" reviewsCount="7043" reviewsRating={4} visitorsIcons={['person2', 'person3', 'person4', 'person1']}/>
+                    <Card class="swiper-slide" title="zombieland" image="zombieland" imageName="Zombieland image" visitorsCount="17031" reviewsCount="2213" reviewsRating={5} visitorsIcons={['person4', 'person5', 'person2', 'person3']}/>
                 </div>
                 <div class="swiper-pagination !static mt-6"></div>
             </div>
@@ -40,7 +40,7 @@ import Card from "./Card.astro";
         position: absolute;
         top: -40px;
         left: -20px;
-        z-index: 100;
+        z-index: 5;
         background-image: url('../../public/img/places-gallery/pumpkin1.png');
         background-repeat: no-repeat;
         width: 68px;
@@ -51,7 +51,7 @@ import Card from "./Card.astro";
         position: absolute;
         bottom: 61.5px;
         right: -30px;
-        z-index: 100;
+        z-index: 5;
         background-image: url('../../public/img/places-gallery/pumpkin2.png');
         background-repeat: no-repeat;
         width: 47px;
