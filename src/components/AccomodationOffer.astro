@@ -1,0 +1,87 @@
+---
+interface Props {
+    imageSrc?: string;
+    imageAlt?: string;
+    title: string;
+    description: string;
+    price?: number;
+    rating?: number;
+    class?: string;
+}
+
+const {
+    imageSrc,
+    imageAlt,
+    title,
+    description,
+    price,
+    rating,
+    class: className,
+} = Astro.props;
+
+const imgSrc = "../../public/img/hero/" + imageSrc + ".jpg";
+const imgAlt = imageAlt + " image";
+
+const fixedRating = rating.toFixed(2);
+---
+
+
+<div class:list={["p-6 w-[490px] bg-dark-purple rounded-[48px] flex gap-x-6 bg-hero-grass bg-no-repeat absolute", className]}>
+    <div id="accomodation-gallery" class="swiper rounded-[32px] w-[136px] flex-none">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src={imgSrc} alt={imgAlt} class="rounded-[32px]">
+            </div>
+            <div class="swiper-slide">
+                <img src={imgSrc} alt={imgAlt} class="rounded-[32px]">
+            </div>
+            <div class="swiper-slide">
+                <img src={imgSrc} alt={imgAlt} class="rounded-[32px]">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div>
+        <div class="py-2 flex flex-col gap-1">
+            <h2 class="text-[32px] font-creepster text-white leading-none tracking-[-0.64px]">{ title }</h2>
+            <p class="text-sm leading-normal tracking-[-0.28px]">{ description }</p>
+        </div>
+        <div class="flex justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl text-[#DC59C0] font-semibold leading-none tracking-[-0.48px] uppercase">${ price }</span>
+                <p class="text-sm leading-normal tracking-[-0.28px]">/night</p>
+            </div>
+            <div class="p-[10px] flex gap-x-2 items-center bg-svg-light-purple text-[#211357] text-sm leading-normal tracking-[-0.28px] rounded-full border-t-[1px] border-l-[1px] border-[rgba(255, 255, 255, 0.50)]"> 
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.05 4.30507C11.07 4.47507 11.31 5.21507 10.575 5.94507L9.33495 7.18507C9.12495 7.39507 9.00995 7.80007 9.07495 8.09007L9.42995 9.62507C9.70995 10.8401 9.06495 11.3101 7.98995 10.6751L6.49495 9.79007C6.22495 9.63007 5.77995 9.63007 5.50495 9.79007L4.00995 10.6751C2.93995 11.3101 2.28995 10.8351 2.56995 9.62507L2.92495 8.09007C2.98995 7.80007 2.87495 7.39507 2.66495 7.18507L1.42495 5.94507C0.694955 5.21507 0.929955 4.47507 1.94995 4.30507L3.54495 4.04007C3.80995 3.99507 4.12995 3.76007 4.24995 3.51507L5.12995 1.75507C5.60495 0.800068 6.38495 0.800068 6.86495 1.75507L7.74495 3.51507C7.79495 3.62007 7.88495 3.72507 7.98995 3.81007" fill="#BDC1FF"/>
+                    <path d="M10.05 4.30507C11.07 4.47507 11.31 5.21507 10.575 5.94507L9.33495 7.18507C9.12495 7.39507 9.00995 7.80007 9.07495 8.09007L9.42995 9.62507C9.70995 10.8401 9.06495 11.3101 7.98995 10.6751L6.49495 9.79007C6.22495 9.63007 5.77995 9.63007 5.50495 9.79007L4.00995 10.6751C2.93995 11.3101 2.28995 10.8351 2.56995 9.62507L2.92495 8.09007C2.98995 7.80007 2.87495 7.39507 2.66495 7.18507L1.42495 5.94507C0.694955 5.21507 0.929955 4.47507 1.94995 4.30507L3.54495 4.04007C3.80995 3.99507 4.12995 3.76007 4.24995 3.51507L5.12995 1.75507C5.60495 0.800068 6.38495 0.800068 6.86495 1.75507L7.74495 3.51507C7.79495 3.62007 7.88495 3.72507 7.98995 3.81007" stroke="#211357" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>     
+                { fixedRating }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // import Swiper bundle with all modules installed
+    import Swiper from 'swiper/bundle';
+
+    // import styles bundle
+    import 'swiper/css/bundle';
+
+    const swiper = new Swiper('#accomodation-gallery', {
+        //disable swiper initialization
+        autoplay: {
+            delay: 5000,
+            pauseOnMouseEnter: true,
+        },
+        direction: 'horizontal',
+        spaceBetween: 30,
+        slidesPerView: 1,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
