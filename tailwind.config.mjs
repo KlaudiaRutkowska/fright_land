@@ -92,10 +92,37 @@ export default {
                 'hero-grass': `
                     url('/img/hero/grass1.svg'),
                     url('/img/hero/grass2.svg')
+                `,
+                'form-bg': `
+                    url('/img/hero/form-grass1.svg'),
+                    url('/img/hero/form-grass2.svg'),
+                    url('/img/hero/bricks.svg')
+                `,
+                'form-grass': `
+                    url('/img/hero/form-grass3.svg')
+                `,
+                'select-arrow': `
+                    url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.97027 5.64374L5.52527 3.19874C5.23652 2.90999 4.76402 2.90999 4.47527 3.19874L2.03027 5.64374' stroke='%23654AFF' stroke-width='2.25' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.97027 12.3563L5.52527 14.8013C5.23652 15.09 4.76402 15.09 4.47527 14.8013L2.03027 12.3563' stroke='%23654AFF' stroke-width='2.25' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+                `,
+                'form-shadow': `
+                    url('/img/hero/form-shadow.svg')
+                `,
+                'form-vines1': `
+                    url('/img/hero/vines1.png')
+                `,
+                'form-vines2': `
+                    url('/img/hero/vines2.png')
+                `,
+                'form-vines3': `
+                    url('/img/hero/vines3.png')
+                `,
+                'form-pumpkin': `
+                    url('/img/hero/pumpkin1.png')
                 `
             },
             backgroundPosition: {
                 'btn-host': 'top 2.5px left 11.75px, bottom 0 right 17.25px, 100%',
+                'btn-search': 'top 0 left 23.78px, bottom -1.26px right 29.24px, 100%, 100%',
                 'video': 'center center',
                 'video-section': 'top 0 left 32%, bottom 0 left 16%',
                 'shop': 'top -7px left 45%, bottom left',
@@ -104,7 +131,9 @@ export default {
                 'review-grass': 'top -3px left 10%, bottom -5px right 45%',
                 'sponsors-section': 'left 0, right 0',
                 'card-grass': 'top -4px left 63px, bottom 116px right -5px',
-                'hero-grass': 'top -3px left 40%, bottom -3px right 10%'
+                'hero-grass': 'top -3px left 40%, bottom -3px right 10%',
+                'form-bg': 'top -1px left 7%, bottom -3px right 5%, top 0 left 230px',
+                'form-grass': 'top 8px right 10px'
             },
 		},
 	},

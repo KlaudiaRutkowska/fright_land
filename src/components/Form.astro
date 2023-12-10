@@ -1,0 +1,82 @@
+<div class="absolute bottom-0 left-[255px] right-[255px] z-10 rounded-[48px] outline outline-[10px] outline-[#654AFF] after:absolute after:bg-form-shadow after:bg-no-repeat after:-z-50 after:w-[1386px] after:h-[46.6px] after:bottom-[-35px] after:left-[12px] after:right-[12px]">
+    <form action="" class="h-[150px] flex z-20">
+        <div class="px-10 flex gap-6 items-center flex-1 h-[150px] border-t-[3px] border-l-[3px] rounded-tr-[16px] rounded-br-[16px] rounded-[48px] bg-dark-purple border-[#382499] bg-form-bg bg-no-repeat relative before:absolute before:z-10 before:bg-form-vines1 before:bg-no-repeat before:w-[89px] before:h-[204px] before:top-[-22px] before:bottom-[-32px] before:left-[-49px] after:bg-form-pumpkin after:absolute after:z-10 after:bg-no-repeat after:w-[174px] after:h-[85px] after:top-[-61px] after:left-[229px]">
+            <div class="flex gap-2">
+                <div class="flex flex-col gap-2">
+                    <label for="location" class="text-svg-light-purple text-[15px] opacity-50">Location</label>
+                    
+                    <div class="relative">
+                        <input id="location" type="text" name="location" placeholder="Choose location" class="p-4 pl-[51px] h-[60px] w-[494px] bg-white text-background-purple rounded-2xl border-[1px] border-svg-light-purple/50 outline-none peer focus:ring-2 focus:ring-svg-light-purple" />
+
+                        <div class="absolute inset-y-0 start-0 flex items-center pl-4 pointer-events-none opacity-50 text-background-purple peer-focus:text-[#654AFF] peer-focus:opacity-100">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.1209 10.3099C15.1209 12.0299 13.7309 13.4299 12.0009 13.4299C10.2709 13.4299 8.88086 12.0399 8.88086 10.3099C8.88086 8.57994 10.2809 7.18994 12.0009 7.18994C12.3409 7.18994 12.6709 7.23994 12.9709 7.33994" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.98094 4.30006C10.3509 0.190061 18.8209 1.60006 20.3809 8.51006C21.5309 13.5901 18.3709 17.8901 15.6009 20.5501C13.5909 22.4901 10.4109 22.4901 8.39094 20.5501C5.63094 17.8801 2.46094 13.5801 3.62094 8.50006" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="date" class="text-svg-light-purple text-[15px] opacity-50">Date</label>
+
+                    <div class="relative">
+                        <input id="date" type="text" name="date" placeholder="Select date of stay" class="p-4 pl-[51px] h-[60px] bg-white text-background-purple rounded-2xl border-[1px] border-svg-light-purple/50 outline-none peer focus:ring-2 focus:ring-svg-light-purple" />
+
+                        <div class="absolute inset-y-0 start-0 flex items-center pl-4 pointer-events-none opacity-50 text-background-purple peer-focus:text-[#654AFF] peer-focus:opacity-100">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 2V5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 2V5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.5 9.08984H20.5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 13.01V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.9945 13.7H12.0035" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.29529 13.7H8.30427" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.29529 16.7H8.30427" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="people" class="text-svg-light-purple text-[15px] opacity-50">People</label>
+                    
+                    <select id="people" name="people" class="px-5 pr-[45px] pt-[16px] pb-[19px] h-[60px] bg-white text-background-purple/50 rounded-2xl border-[1px] border-svg-light-purple/50 outline-none appearance-none bg-select-arrow bg-no-repeat bg-[right_21.5px_center]">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2">
+                <span class="text-svg-light-purple text-[15px] opacity-50">Level of scariness</span>
+
+                <div class="flex gap-1">
+                    <label>
+                        <input type="radio" name="scariness" class="hidden peer" />
+
+                        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-2xl border-[3px] border-transparent transition-colors duration-300 peer-checked:border-[#654AFF] peer-checked:shadow-[2px_2px_2px_0px_#000]">
+                            <img src="../../public/img/hero/bat.png" alt="bat" />
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="scariness" class="hidden peer" />
+
+                        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-2xl border-[3px] border-transparent transition-colors duration-300 peer-checked:border-[#654AFF] peer-checked:shadow-[2px_2px_2px_0px_#000]">
+                            <img src="../../public/img/hero/pumpkin.png" alt="pumpkin" />
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="scariness" class="hidden peer" />
+
+                        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-2xl border-[3px] border-transparent transition-colors duration-300 peer-checked:border-[#654AFF] peer-checked:shadow-[2px_2px_2px_0px_#000]">
+                            <img src="../../public/img/hero/ghost.png" alt="ghost" />
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="w-[220px] h-[150px] flex items-center justify-center border-t-[3px] border-l-[1px] rounded-tl-[16px] rounded-bl-[16px] rounded-[48px] bg-dark-purple border-[#382499] bg-form-grass bg-no-repeat relative                  before:absolute before:z-10 before:bg-form-vines3 before:bg-no-repeat before:w-[89px] before:h-[204px] before:top-[-22px] before:bottom-[-32px] before:left-[-40px] after:bg-form-vines2 after:absolute after:z-10 after:bg-no-repeat after:w-[91px] after:h-[185px] after:top-[-20px] after:bottom-[-15px] after:right-[-49px]">
+            <!-- <button type="submit" class="px-[43px] pt-7 pb-8 rounded-2xl bg-gradient-to-br from-[#FFB311] to-[#E59013] shadow-[5px_3px_0px_0px_rgba(249,204,113,0.75)_inset,-2px_-3px_0px_0px_#CD861A_inset]">Search</button> -->
+            <button type="submit" class="px-[43px] pt-7 pb-8 text-[27px] font-bold text-white tracking-[-0.54px] rounded-2xl bg-[url('/img/btn-search-tl-grass.svg'),url('/img/btn-search-br-grass.svg'),linear-gradient(102deg,rgba(255,255,255,0.00)_19.45%,rgba(255,255,255,0.15)_19.77%,rgba(255,255,255,0.13)_27.81%,rgba(255,255,255,0.00)_27.82%),linear-gradient(96deg,#FFB311_0%,#E59013_100%)] bg-no-repeat bg-btn-search shadow-[5px_3px_0px_0px_rgba(249,204,113,0.75)_inset,-2px_-3px_0px_0px_#CD861A_inset]">Search</button>
+        </div>
+    </form>
+</div>
