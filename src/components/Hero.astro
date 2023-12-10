@@ -1,10 +1,11 @@
 ---
 import AccomodationOffer from "./AccomodationOffer.astro";
+import Form from "./Form.astro";
 ---
 
 <section id="hero" class="mb-[164px]">
-    <div class="h-[896px] bg-hero bg-no-repeat bg-contain">
-        <div class="container relative">
+    <div class="h-[896px] bg-hero bg-no-repeat bg-contain"> 
+        <div class="container h-full relative">
             <AccomodationOffer
                 title="old abandoned bedroom"
                 description="Watch out for ghosts that may be roaming around you"
@@ -63,6 +64,8 @@ import AccomodationOffer from "./AccomodationOffer.astro";
                     stroke-width="2"
                     stroke-linecap="round"></path>
             </svg>
+
+            <Form />
         </div>
     </div>
 </section>
